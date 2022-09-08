@@ -11,7 +11,8 @@ def main():
         'call esi': b'\xFF\xD6',
         'call edi': b'\xFF\xD7',
         'call esp': b'\xFF\xD4',
-        'call ebp': b'\xFF\xD5'
+        'call ebp': b'\xFF\xD5',
+        'jump eax': b'\xFF\xE0'
 
     }
     
