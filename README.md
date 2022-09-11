@@ -7,3 +7,6 @@ This script check for calls(or simple jumps) on addresses stored in registers an
 
 ## rename_basic_funcs
 This script renames basic functions that were collected by me
+
+## find_unidentified_functions_and_make_function
+This script finds all non-function code and converts it to functions
