@@ -16,6 +16,7 @@ def main():
         'call r9': b'\x41\xFF\xD1',
         'call r10': b'\x41\xFF\xD2',
         'call r12': b'\x41\xFF\xD4',
+        'call r12': b'\x41\xFF\xD5',
         'jump eax': b'\xFF\xE0',
         'jump edx': b'\xFF\xE2',
         'jump edi': b'\xFF\xE7',
@@ -36,10 +37,13 @@ def main():
                 print('Ending: ' + name)
                 break
             else:
-                print(ea)
-                idc.add_bpt(ea)
-                ea += 1
-                counter+=1
+                if idc.get_segm_name(ea)!='.rdata' and idc.get_segm_name(ea)!='.reloc':
+                    print(ea)
+                    idc.add_bpt(ea)
+                    ea += 1
+                    counter+=1
+                else:
+                    break
     print("{} br set".format(counter))
 if __name__== '__main__':
     main()
